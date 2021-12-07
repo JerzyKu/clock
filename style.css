@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+body {
+    background: linear-gradient(to top,rgb(38, 99, 88),rgb(33, 94, 33));
+    background: linear-gradient(to top,rgb(133, 133, 133),rgb(73, 73, 73));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.clock {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.clock::after{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-color: black;
+    border-radius: 50%;
+    top: 50%;
+    right: 50%;
+    border: 1px solid white;
+    transform: translateX(50%) translateY(-50%);
+}
+.number {
+    padding-top: 5px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.number1{transform: rotate(30deg);}
+.number2{transform: rotate(60deg);}
+.number3{transform: rotate(90deg);}
+.number4{transform: rotate(120deg);}
+.number5{transform: rotate(150deg);}
+.number6{transform: rotate(180deg);}
+.number7{transform: rotate(210deg);}
+.number8{transform: rotate(240deg);}
+.number9{transform: rotate(270deg);}
+.number10{transform: rotate(300deg);}
+.number11{transform: rotate(330deg);}
+.hand{
+    --rotation: 277;
+    height: 40%;
+    width: 10px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: rgb(1, 1, 1);
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* border: 1px solid white; */
+}
+.second {
+    width: 3px;
+    height: 45%;
+    background-color: rgb(0, 0, 0);
+}
+.minutes {
+    width: 7px;
+    height: 40%;
+    background-color: rgb(0, 0, 0);
+}
+.hour {
+    width: 9px;
+    height: 35%;
+    background-color: rgb(0, 0, 0);
+}
+.line {
+    height: 7px;
+    width: 3px;
+    padding-bottom: 150px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('./black.png');
+    background-size: 7px 7px;
+    background-repeat: no-repeat;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
